@@ -36,16 +36,7 @@ module.exports = {
       },
       {
         test: /\.(ttf|woff|woff2|eot)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              publicPath: './fonts/',
-              outputPath: './fonts/'
-            }
-          }
-        ]
+        loader: 'file-loader',
       },
     ],
   },
@@ -60,8 +51,8 @@ module.exports = {
     new Copy({
       patterns: [
         {
-          from: path.resolve(__dirname, 'src/assets/'),
-          to: path.resolve(__dirname, 'dist/assets/'),
+          from: path.resolve(__dirname, 'src/assets/images'),
+          to: path.resolve(__dirname, 'dist/assets/images'),
         },
       ],
     }),
