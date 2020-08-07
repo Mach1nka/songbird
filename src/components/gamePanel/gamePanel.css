@@ -1,0 +1,8 @@
+.header__game_panel {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  background-color: #007c5d;
+  border-radius: 5px;
+}

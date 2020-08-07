@@ -1,5 +1,8 @@
 import React from 'react';
+import Header from '../header/Header';
 
-const App = () => <p className="new">hello world</p>;
+const App = () => (
+  <Header />
+);
 
 export default App;
