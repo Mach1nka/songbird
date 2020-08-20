@@ -1,5 +1,5 @@
 @import "./base/fonts.css";
 @import "./components/gamePanel/gamePanel.css";
-@import "./components/gameLevel/gameLevel.css";
+@import "./components/gamePanel/gameLevel/gameLevel.css";
 @import "./components/header/header.css";
 @import "./base/base.css";

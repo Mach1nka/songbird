@@ -1,5 +1,5 @@
 import React from 'react';
-import GameLevel from '../gameLevel/GameLevel';
+import GameLevel from './gameLevel/GameLevel';
 import GAME_LEVELS from '../../variables/GameLevels';
 
 const GamePanel = () => (
