@@ -1,7 +1,10 @@
 import React from 'react';
+import Riddle from '../riddle/Riddle';
 
 const Main = () => (
-  <main />
+  <main>
+    <Riddle />
+  </main>
 );
 
 export default Main;

@@ -1,0 +1,50 @@
+.rhap_container {
+  background-color: transparent;
+  position: relative;
+  box-shadow: none;
+  padding: 10px 0;
+}
+
+.rhap_progress-bar {
+  background-color: rgba(221,221,221,0.5);
+}
+
+.rhap_progress-filled {
+  background: linear-gradient(to right, rgb(0, 188, 140) 0%, rgb(61, 133, 140) 24.5506%);
+}
+.rhap_time{
+  position: absolute;
+  bottom: 5px;
+  font-family: 'OpenSans Light' ,sans-serif;
+  font-size: 12px;
+  color: #fff;
+}
+.rhap_total-time {
+  right: 15px;
+}
+
+.rhap_progress-indicator {
+  width: 16px;
+  height: 16px;
+  background-color: grey;
+  top: -5px;
+}
+
+.rhap_volume-bar{
+  background-color: rgb(221,221,221,0.5);
+}
+
+.rhap_volume-button {
+  color: #00bc8c;
+}
+.rhap_volume-controls {
+  justify-content: center;
+}
+
+.rhap_main-controls-button {
+  color: #00bc8c;
+}
+
+.rhap_additional-controls {
+  display: none;
+}
