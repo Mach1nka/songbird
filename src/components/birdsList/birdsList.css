@@ -1,0 +1,10 @@
+.birds-list {
+  list-style: none;
+  flex-grow: 1;
+  border: 1px solid #555;
+  border-radius: 5px;
+}
+
+.birds-list:nth-child(1) {
+  border-top: 0px;
+}

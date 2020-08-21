@@ -11,6 +11,8 @@
 }
 .riddle__image > img {
   border-radius: 10px;
+  max-width: 200px;
+  height: 155px;
 }
 
 .riddle__media {

@@ -9,19 +9,19 @@ body {
   color: #fff;
 }
 
-.container_main {
+.container {
   width: 65%;
   margin: 10px auto;
 }
 
 @media (max-width: 1200px) {
-  .container_main {
+  .container {
     width: 85%;
   }
 }
 
 @media (max-width: 600px) {
-  .container_main {
+  .container {
     width: 95%;
   }
 }

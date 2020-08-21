@@ -1,0 +1,29 @@
+.list-item {
+  border-top: 1px solid #555;
+  padding: 12px 20px;
+  background-color: #303030;
+  cursor: pointer;
+  font-family: "OpenSans Regular" ,sans-serif;
+}
+
+.list-item:hover {
+  background-color: #444;
+}
+.list-item:first-child {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.list-item:last-child {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.circle {
+  display: inline-block;
+  background-color: #444;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
