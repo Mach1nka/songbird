@@ -1,4 +1,11 @@
 .main__container {
   display: flex;
-  margin-top: 30px;
+  margin-top: 32px;
+  justify-content: space-between;
+}
+
+@media (max-width: 750px) {
+  .main__container {
+    display: block;
+  }
 }

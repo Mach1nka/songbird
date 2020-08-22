@@ -27,3 +27,11 @@
   border-radius: 50%;
   margin-right: 10px;
 }
+
+.correct {
+  background-color: #00bc8c;
+}
+
+.incorrect {
+  background-color: #d62c1a;
+}
