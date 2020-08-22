@@ -44,10 +44,18 @@
   .birds-info__container {
     width: 50%;
   }
+  .birds-info {
+    display: block;
+    text-align: center;
+  }
+  .birds-info__titles {
+    padding: 0;
+  }
 }
 
 @media (max-width: 750px) {
   .birds-info__container {
     width: 100%;
+    margin-top: 32px;
   }
 }

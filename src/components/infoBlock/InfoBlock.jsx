@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import AudioPlayer from 'react-h5-audio-player';
+import 'react-h5-audio-player/lib/styles.css';
 
 const InfoBlock = ({
-  img, birdsName, latName, description,
+  img, birdsName, latName, description, audioSrc,
 }) => (
   <div className="birds-info__container">
     <div className="birds-info">
@@ -10,6 +12,13 @@ const InfoBlock = ({
       <div className="birds-info__titles">
         <h4 className="titles__name">{birdsName}</h4>
         <h4 className="titles__lat-name">{latName}</h4>
+        <AudioPlayer
+          src={audioSrc}
+          showJumpControls={false}
+          showDownloadProgress={false}
+          layout="horizontal-reverse"
+          customAdditionalControls={[]}
+        />
       </div>
     </div>
     <p className="birds-description">{description}</p>
@@ -20,7 +29,7 @@ InfoBlock.propTypes = {
   img: PropTypes.string,
   birdsName: PropTypes.string,
   latName: PropTypes.string,
-  // audio: PropTypes.string,
+  audioSrc: PropTypes.string,
   description: PropTypes.string,
 };
 
@@ -28,7 +37,7 @@ InfoBlock.defaultProps = {
   img: './assets/images/defaultBird.jpg',
   birdsName: 'Ворон',
   latName: 'Corvus corax',
-  // audio: '',
+  audioSrc: '',
   description: 'Размеры буревестниковых разные. Самые маленькие из них в длину составляют до 25 см, самые большие - до 1 м, при размахе крыльев около 2 м. Существует поверье, что появление буревестника в воздухе предвещает бурю, о чем говорит само название птицы.',
 };
 
