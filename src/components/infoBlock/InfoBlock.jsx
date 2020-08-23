@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import AudioPlayer from 'react-h5-audio-player';
-import 'react-h5-audio-player/lib/styles.css';
+import Player from '../player/Player';
 
 const InfoBlock = ({
   img, birdsName, latName, description, audioSrc,
@@ -12,13 +11,7 @@ const InfoBlock = ({
       <div className="birds-info__titles">
         <h4 className="titles__name">{birdsName}</h4>
         <h4 className="titles__lat-name">{latName}</h4>
-        <AudioPlayer
-          src={audioSrc}
-          showJumpControls={false}
-          showDownloadProgress={false}
-          layout="horizontal-reverse"
-          customAdditionalControls={[]}
-        />
+        <Player src={audioSrc} />
       </div>
     </div>
     <p className="birds-description">{description}</p>

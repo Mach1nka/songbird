@@ -5,7 +5,7 @@
 @import "./base/base.css";
 @import "./components/main/main.css";
 @import "./components/riddle/riddle.css";
-@import "./components/riddle/player.css";
+@import "./components/player/player.css";
 @import "./components/birdsList/birdsList.css";
 @import "./components/birdsList/birdsListItem/birdsListItem.css";
 @import "./components/infoBlock/infoBlock.css";

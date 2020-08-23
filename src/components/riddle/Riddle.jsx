@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import AudioPlayer from 'react-h5-audio-player';
-import 'react-h5-audio-player/lib/styles.css';
+import Player from '../player/Player';
 
 const Riddle = ({ imgSrc, birdsName, audioSrc }) => (
   <div className="riddle">
@@ -10,13 +9,7 @@ const Riddle = ({ imgSrc, birdsName, audioSrc }) => (
     </div>
     <div className="riddle__media">
       <h3 className="mystery_bird">{birdsName}</h3>
-      <AudioPlayer
-        src={audioSrc}
-        showJumpControls={false}
-        showDownloadProgress={false}
-        layout="horizontal-reverse"
-        customAdditionalControls={[]}
-      />
+      <Player src={audioSrc} />
     </div>
   </div>
 );
