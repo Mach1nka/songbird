@@ -7,7 +7,7 @@ import AplicationContext from '../context/AplicationContext';
 const BirdsList = ({ data }) => {
   const { indexOfArray } = useContext(AplicationContext);
   return (
-    <ul className="birds-list">
+    <div className="birds-list">
       {
         BIRDS_DATA[indexOfArray].map((el) => (
           <BirdsListItem
@@ -21,7 +21,7 @@ const BirdsList = ({ data }) => {
           />
         ))
       }
-    </ul>
+    </div>
   );
 };
 

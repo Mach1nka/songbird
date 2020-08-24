@@ -1,5 +1,4 @@
 .birds-list {
-  list-style: none;
   border: 1px solid #555;
   border-radius: 5px;
   min-width: 40%;
@@ -13,5 +12,6 @@
 @media (max-width: 1000px) {
   .birds-list {
     min-width: 300px;
+    width: inherit;
   }
 }

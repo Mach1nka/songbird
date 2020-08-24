@@ -1,9 +1,15 @@
 .list-item {
+  display: block;
+  width: 100%;
+  border: 0;
   border-top: 1px solid #555;
   padding: 12px 20px;
   background-color: #303030;
   cursor: pointer;
   font-family: "OpenSans Regular" ,sans-serif;
+  font-size: 15px;
+  color: #fff;
+  text-align: left;
 }
 
 .list-item:hover {

@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 const BirdsListItem = ({
   bird, latName, description, imgSrc, audioSrc, setData,
 }) => (
-  <li
+  <button
+    type="button"
     className="list-item"
     onClickCapture={() => setData({
       bird, latName, description, imgSrc, audioSrc,
@@ -12,7 +13,7 @@ const BirdsListItem = ({
   >
     <span className="circle" />
     {bird}
-  </li>
+  </button>
 );
 
 BirdsListItem.propTypes = {
