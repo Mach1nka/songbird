@@ -10,11 +10,16 @@ const Player = ({ src }) => (
     showDownloadProgress={false}
     layout="horizontal-reverse"
     customAdditionalControls={[]}
+    autoPlayAfterSrcChange={false}
   />
 );
 
 Player.propTypes = {
-  src: PropTypes.string.isRequired,
+  src: PropTypes.string,
+};
+
+Player.defaultProps = {
+  src: '',
 };
 
 export default Player;

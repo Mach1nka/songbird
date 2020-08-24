@@ -9,7 +9,9 @@
 
 .birds__img {
   width: 200px;
+  height: 138px;
   border-radius: 5px;
+  object-fit: cover;
 }
 
 .birds-info { display: flex; }
@@ -37,6 +39,10 @@
 .birds-description {
   margin-top: 16px;
   font-size: 14px;
+  font-family: "OpenSans Regular", sans-serif;
+}
+
+.birds-info__default {
   font-family: "OpenSans Regular", sans-serif;
 }
 

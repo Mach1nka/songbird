@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Header from '../header/Header';
 import Main from '../main/Main';
-import AplicationContext from '../context/AplecationContext';
+import AplicationContext from '../context/AplicationContext';
 
 const App = () => {
   const [indexOfArray, setIndex] = useState(0);
