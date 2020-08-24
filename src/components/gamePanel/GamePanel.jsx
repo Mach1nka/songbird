@@ -1,14 +1,20 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import GameLevel from './gameLevel/GameLevel';
 import GAME_LEVELS from '../../variables/GameLevels';
 import AplicationContext from '../context/AplicationContext';
 
 const GamePanel = () => {
-  const indexOfArray = useContext(AplicationContext);
+  const { indexOfArray } = useContext(AplicationContext);
+  useEffect(() => {
+    const panelElements = document.querySelectorAll('.header__game_level');
+    panelElements.forEach((el, idx) => (idx === indexOfArray
+      ? el.classList.add('correct')
+      : el.classList.remove('correct')));
+  }, [indexOfArray]);
   return (
     <ul className="header__game_panel">
       {
-        GAME_LEVELS.map((el) => <GameLevel key={`${el.id}_${el.title}`} name={el.title} state={el.currentLvl} />)
+        GAME_LEVELS.map((el) => <GameLevel key={`${el.id}_${el.title}`} name={el.title} />)
       }
     </ul>
   );
