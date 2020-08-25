@@ -5,11 +5,11 @@ import BIRDS_DATA from '../../variables/Data';
 import AplicationContext from '../context/AplicationContext';
 
 const BirdsList = ({ data }) => {
-  const { indexOfArray } = useContext(AplicationContext);
+  const { indexOfBirdsData } = useContext(AplicationContext);
   return (
     <div className="birds-list">
       {
-        BIRDS_DATA[indexOfArray].map((el) => (
+        BIRDS_DATA[indexOfBirdsData].map((el) => (
           <BirdsListItem
             key={el.id}
             bird={el.name}

@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import AplicationContext from '../context/AplicationContext';
 
 const NextLevel = ({ state }) => {
-  const { setIndex, indexOfArray } = useContext(AplicationContext);
+  const { setIndex, indexOfBirdsData } = useContext(AplicationContext);
   return (
     <button
       type="button"
       className={`button__next-level ${state && 'correct'}`}
-      onClick={() => { setIndex(indexOfArray + 1); }}
+      onClick={() => { setIndex(indexOfBirdsData + 1); }}
     >
       Next Level
     </button>

@@ -5,11 +5,11 @@ import BirdsList from '../birdsList/BirdsList';
 import InfoBlock from '../infoBlock/InfoBlock';
 import NextLevel from '../button/NextLevel';
 
-const Main = ({ randomValue, changeScore }) => {
+const Main = ({ changeScore }) => {
   const [listItemData, setListItemData] = useState({});
   return (
     <main>
-      <Riddle randomValue={randomValue} />
+      <Riddle listItemData={listItemData} />
       <div className="main__container">
         <BirdsList changeScore={changeScore} data={setListItemData} />
         <InfoBlock data={listItemData} />
@@ -20,7 +20,6 @@ const Main = ({ randomValue, changeScore }) => {
 };
 
 Main.propTypes = {
-  randomValue: PropTypes.func.isRequired,
   changeScore: PropTypes.func.isRequired,
 };
 
