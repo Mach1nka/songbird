@@ -4,13 +4,13 @@ import GAME_LEVELS from '../../variables/GameLevels';
 import AplicationContext from '../context/AplicationContext';
 
 const GamePanel = () => {
-  const { indexOfArray } = useContext(AplicationContext);
+  const { indexOfBirdsData } = useContext(AplicationContext);
   useEffect(() => {
     const panelElements = document.querySelectorAll('.header__game_level');
-    panelElements.forEach((el, idx) => (idx === indexOfArray
+    panelElements.forEach((el, idx) => (idx === indexOfBirdsData
       ? el.classList.add('correct')
       : el.classList.remove('correct')));
-  }, [indexOfArray]);
+  }, [indexOfBirdsData]);
   return (
     <ul className="header__game_panel">
       {
