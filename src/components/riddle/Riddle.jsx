@@ -10,7 +10,8 @@ const Riddle = ({ listItemData }) => {
   const randomIdxForRiddle = useMemo(() => randomValue(currentData.length),
     [indexOfBirdsData]);
   useEffect(() => {
-    if (listItemData.audioSrc === currentData[randomIdxForRiddle].audio) {
+    if (listItemData.audioSrc === currentData[randomIdxForRiddle].audio
+      && listItemData.setDispatch) {
       setComplete(true);
       listItemData.setDispatch('correct');
       // document.querySelector('#riddle__image').setAttribute('src', listItemData.imgSrc);

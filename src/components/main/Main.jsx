@@ -14,7 +14,7 @@ const Main = ({ changeScore }) => {
         <BirdsList changeScore={changeScore} data={setListItemData} />
         <InfoBlock data={listItemData} />
       </div>
-      <NextLevel state />
+      <NextLevel />
     </main>
   );
 };
