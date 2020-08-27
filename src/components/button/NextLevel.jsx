@@ -3,7 +3,7 @@ import AplicationContext from '../context/AplicationContext';
 
 const NextLevel = () => {
   const {
-    setIndex, indexOfBirdsData, isLevelComlete, setComplete,
+    setIndex, indexOfBirdsData, isLevelComlete, setComplete, setPoints,
   } = useContext(AplicationContext);
   return (
     <button
@@ -12,7 +12,8 @@ const NextLevel = () => {
       onClick={() => (isLevelComlete
         ? (
           setIndex(indexOfBirdsData + 1),
-          setComplete(false))
+          setComplete(false),
+          setPoints(5))
         : false
       )}
     >

@@ -7,11 +7,13 @@ import BIRDS_DATA from '../../variables/Data';
 import AplicationContext from '../context/AplicationContext';
 
 const Riddle = ({ listItemData }) => {
-  const { indexOfBirdsData, randomValue, setComplete } = useContext(AplicationContext);
+  const {
+    indexOfBirdsData, randomValue, setComplete, setPoints,
+  } = useContext(AplicationContext);
   const currentData = BIRDS_DATA[indexOfBirdsData];
   const randomIdxForRiddle = useMemo(() => randomValue(currentData.length), [indexOfBirdsData]);
-  const [name, setName] = useState('*****');
-  const [img, setImg] = useState('./assets/images/defaultBird.jpg');
+  const [name, setName] = useState();
+  const [img, setImg] = useState();
   useEffect(() => {
     if (listItemData.audioSrc === currentData[randomIdxForRiddle].audio
       && listItemData.setStateOfCircle) {
@@ -20,9 +22,15 @@ const Riddle = ({ listItemData }) => {
       setImg(listItemData.imgSrc);
       listItemData.setStateOfCircle('correct');
     } else if (listItemData.setStateOfCircle) {
+      setPoints((prev) => prev - 1);
       listItemData.setStateOfCircle('incorrect');
     }
   }, [listItemData]);
+  useEffect(() => {
+    setName('*****');
+    setImg('./assets/images/defaultBird.jpg');
+  }, [indexOfBirdsData]);
+  console.log(listItemData);
   return (
     <div className="riddle">
       <div className="riddle__image">

@@ -1,4 +1,4 @@
-.list-item {
+.list__item {
   display: block;
   width: 100%;
   border: 0;
@@ -12,15 +12,15 @@
   text-align: left;
 }
 
-.list-item:hover {
+.list__item:hover {
   background-color: #444;
 }
-.list-item:first-child {
+.list__item:first-child {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
 
-.list-item:last-child {
+.list__item:last-child {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
@@ -32,12 +32,4 @@
   height: 10px;
   border-radius: 50%;
   margin-right: 10px;
-}
-
-.correct {
-  background-color: #00bc8c;
-}
-
-.incorrect {
-  background-color: #d62c1a;
 }

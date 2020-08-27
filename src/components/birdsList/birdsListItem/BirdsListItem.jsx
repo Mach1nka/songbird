@@ -14,7 +14,7 @@ const BirdsListItem = ({
   return (
     <button
       type="button"
-      className="list-item"
+      className="list__item"
       onClick={() => {
         if (isLevelComlete) {
           setData({

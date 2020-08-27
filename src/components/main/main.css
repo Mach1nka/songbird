@@ -9,3 +9,11 @@
     display: block;
   }
 }
+
+.correct {
+  background-color: #00bc8c!important;
+}
+
+.incorrect {
+  background-color: #d62c1a!important;
+}

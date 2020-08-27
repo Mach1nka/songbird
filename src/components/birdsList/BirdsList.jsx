@@ -26,8 +26,7 @@ const BirdsList = ({ data }) => {
 };
 
 BirdsList.propTypes = {
-  // changeScore: PropTypes.func.isRequired,
   data: PropTypes.func.isRequired,
 };
-// changeScore
+
 export default BirdsList;
