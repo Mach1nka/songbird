@@ -21,7 +21,7 @@ const Riddle = ({ listItemData }) => {
       setName(listItemData.bird);
       setImg(listItemData.imgSrc);
       listItemData.setStateOfCircle('correct');
-    } else if (listItemData.setStateOfCircle) {
+    } else if ((listItemData.setStateOfCircle) && (!listItemData.stateOfCircle)) {
       setPoints((prev) => prev - 1);
       listItemData.setStateOfCircle('incorrect');
     }
@@ -52,6 +52,7 @@ Riddle.propTypes = {
     latName: PropTypes.string,
     description: PropTypes.string,
     setStateOfCircle: PropTypes.func,
+    stateOfCircle: PropTypes.string,
   }),
 };
 
@@ -63,6 +64,7 @@ Riddle.defaultProps = {
     latName: '',
     description: '',
     setStateOfCircle: () => {},
+    stateOfCircle: '',
   }),
 };
 

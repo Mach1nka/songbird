@@ -22,7 +22,7 @@ const BirdsListItem = ({
           });
         } else {
           setData({
-            bird, latName, description, imgSrc, audioSrc, setStateOfCircle,
+            bird, latName, description, imgSrc, audioSrc, setStateOfCircle, stateOfCircle,
           });
         }
       }}
