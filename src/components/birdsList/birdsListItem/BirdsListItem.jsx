@@ -1,13 +1,16 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
-// import reducer from '../../../variables/Reduser';
 import AplicationContext from '../../context/AplicationContext';
 
 const BirdsListItem = ({
   bird, latName, description, imgSrc, audioSrc, setData,
 }) => {
-  const { isLevelComlete } = useContext(AplicationContext);
-  const [state, setDispatch] = useState('');
+  const { isLevelComlete, indexOfBirdsData } = useContext(AplicationContext);
+  const [stateOfCircle, setStateOfCircle] = useState('');
+  useEffect(() => {
+    setStateOfCircle('');
+    setData({});
+  }, [indexOfBirdsData]);
   return (
     <button
       type="button"
@@ -19,12 +22,12 @@ const BirdsListItem = ({
           });
         } else {
           setData({
-            bird, latName, description, imgSrc, audioSrc, setDispatch,
+            bird, latName, description, imgSrc, audioSrc, setStateOfCircle,
           });
         }
       }}
     >
-      <span className={`circle ${state}`} />
+      <span className={`circle ${stateOfCircle}`} />
       {bird}
     </button>
   );
