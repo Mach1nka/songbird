@@ -29,6 +29,7 @@ const Riddle = ({ listItemData }) => {
   useEffect(() => {
     setName('*****');
     setImg('./assets/images/defaultBird.jpg');
+    console.log(`Правильный ответ: ${currentData[randomIdxForRiddle].name}`);
   }, [indexOfBirdsData]);
   // console.log(listItemData);
   return (
