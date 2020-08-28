@@ -4,8 +4,8 @@ import GamePanel from '../gamePanel/GamePanel';
 import Score from '../score/Score';
 import AplicationContext from '../context/AplicationContext';
 
-const Header = ({ score, setScore }) => {
-  const { isLevelComlete, points } = useContext(AplicationContext);
+const Header = ({ setScore }) => {
+  const { isLevelComlete, points, score } = useContext(AplicationContext);
   useEffect(() => {
     if (isLevelComlete) {
       setScore((prev) => prev + points);
@@ -25,7 +25,6 @@ const Header = ({ score, setScore }) => {
 };
 
 Header.propTypes = {
-  score: PropTypes.number.isRequired,
   setScore: PropTypes.func.isRequired,
 };
 

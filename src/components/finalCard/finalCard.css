@@ -1,0 +1,51 @@
+.final__card {
+  text-align: center;
+  border-radius: 5px;
+  padding: 2rem;
+  background-color: #303030;
+}
+
+.final__card__title {
+  font-size: 48px;
+  font-family: "OpenSans Bold", monospace;
+  margin: 20px 0;
+}
+
+.final__card__text {
+  font-family: "OpenSans Light", monospace;
+  font-size: 20px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.final__card__text > a {
+  text-decoration: none;
+  color: #fff;
+  font-family: "OpenSans Bold", monospace;
+  transition: .2s ease-in;
+}
+
+.final__card__text > a:hover {
+  font-size: 19px;
+}
+
+.final__card__text > p {
+  padding-bottom: 16px;
+}
+
+.final__card__text > span {
+  font-family: "OpenSans Bold", monospace;
+}
+
+.final__card__wrapper {
+  padding: 24px 0;
+}
+
+@media (max-width:500px) {
+  .final__card {
+    padding: 2rem 1rem;
+  }
+  .final__card__title {font-size: 36px; }
+  .final__card__text { font-size: 16px; }
+  .final__card__wrapper { padding: 0; }
+}

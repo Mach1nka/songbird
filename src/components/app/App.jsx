@@ -19,9 +19,10 @@ const App = () => {
       isLevelComlete,
       setComplete,
       randomValue,
+      score,
     }}
     >
-      <Header score={score} setScore={setScore} />
+      <Header setScore={setScore} />
       <Main />
     </AplicationContext.Provider>
   );

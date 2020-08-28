@@ -30,7 +30,7 @@ const Riddle = ({ listItemData }) => {
     setName('*****');
     setImg('./assets/images/defaultBird.jpg');
   }, [indexOfBirdsData]);
-  console.log(listItemData);
+  // console.log(listItemData);
   return (
     <div className="riddle">
       <div className="riddle__image">

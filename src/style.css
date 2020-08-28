@@ -10,3 +10,5 @@
 @import "./components/birdsList/birdsListItem/birdsListItem.css";
 @import "./components/infoBlock/infoBlock.css";
 @import "./components/button/nextLevel.css";
+@import "./components/finalCard/finalCard.css";
+@import "./components/button/tryAgain.css";
