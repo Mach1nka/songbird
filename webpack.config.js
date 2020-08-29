@@ -38,6 +38,10 @@ module.exports = {
         test: /\.(ttf|woff|woff2|eot)$/,
         loader: 'file-loader',
       },
+      {
+        test: /\.mp3$/,
+        loader: 'file-loader',
+      },
     ],
   },
   devServer: {
