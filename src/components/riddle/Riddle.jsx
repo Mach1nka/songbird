@@ -27,8 +27,8 @@ const Riddle = ({ listItemData }) => {
       audioSignal(success);
     } else if ((listItemData.setStateOfCircle) && (!listItemData.stateOfCircle)) {
       setPoints((prev) => prev - 1);
-      audioSignal(error);
       listItemData.setStateOfCircle('incorrect');
+      audioSignal(error);
     }
   }, [listItemData]);
   useEffect(() => {
