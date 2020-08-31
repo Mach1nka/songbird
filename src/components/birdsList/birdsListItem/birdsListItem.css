@@ -1,0 +1,35 @@
+.list__item {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-top: 1px solid #555;
+  padding: 12px 20px;
+  background-color: #303030;
+  cursor: pointer;
+  font-family: "OpenSans Regular" ,sans-serif;
+  font-size: 15px;
+  color: #fff;
+  text-align: left;
+}
+
+.list__item:hover {
+  background-color: #444;
+}
+.list__item:first-child {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.list__item:last-child {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.circle {
+  display: inline-block;
+  background-color: #444;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 10px;
+}

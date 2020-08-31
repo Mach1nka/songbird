@@ -1,0 +1,14 @@
+@import "./base/fonts.css";
+@import "./components/gamePanel/gamePanel.css";
+@import "./components/gamePanel/gameLevel/gameLevel.css";
+@import "./components/header/header.css";
+@import "./base/base.css";
+@import "./components/main/main.css";
+@import "./components/riddle/riddle.css";
+@import "./components/player/player.css";
+@import "./components/birdsList/birdsList.css";
+@import "./components/birdsList/birdsListItem/birdsListItem.css";
+@import "./components/infoBlock/infoBlock.css";
+@import "./components/button/nextLevel.css";
+@import "./components/finalCard/finalCard.css";
+@import "./components/button/tryAgain.css";

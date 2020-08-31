@@ -1,0 +1,23 @@
+main {
+  margin-top: 32px;
+}
+
+.main__container {
+  display: flex;
+  margin-top: 32px;
+  justify-content: space-between;
+}
+
+@media (max-width: 750px) {
+  .main__container {
+    display: block;
+  }
+}
+
+.correct {
+  background-color: #00bc8c!important;
+}
+
+.incorrect {
+  background-color: #d62c1a!important;
+}

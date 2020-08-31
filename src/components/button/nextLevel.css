@@ -1,0 +1,25 @@
+.button__next-level {
+  width: 100%;
+  padding: 8px 0;
+  background-color: #303030;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: "OpenSans Regular", sans-serif;
+  color: #fff;
+  border: 1px solid #444;
+  margin-top: 32px;
+  cursor: pointer;
+  transition: .2s ease-in;
+}
+
+.button__next-level.correct {
+  background-color: #00bc8c;
+}
+
+.button__next-level:active {
+  border: 1px solid #666;
+}
+
+.button__next-level.correct:hover {
+  background-color: #00efb2;
+}

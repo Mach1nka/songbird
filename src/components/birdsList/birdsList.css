@@ -1,0 +1,17 @@
+.birds-list {
+  border: 1px solid #555;
+  border-radius: 5px;
+  min-width: 40%;
+  height: fit-content;
+}
+
+.birds-list:nth-child(1) {
+  border-top: 0px;
+}
+
+@media (max-width: 1000px) {
+  .birds-list {
+    min-width: 300px;
+    width: inherit;
+  }
+}
