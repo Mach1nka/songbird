@@ -3,7 +3,9 @@ import TryAgain from '../button/TryAgain';
 import AplicationContext from '../context/AplicationContext';
 
 const FinalCard = () => {
-  const { setIndex, score, setScore } = useContext(AplicationContext);
+  const {
+    setIndex, score, setScore, setListItemData,
+  } = useContext(AplicationContext);
   if (score < 30) {
     return (
       <div className="final__card">
@@ -20,7 +22,11 @@ const FinalCard = () => {
           возможных баллов
         </p>
         <div className="final__card__wrapper">
-          <TryAgain changeIndex={setIndex} resetScore={setScore} />
+          <TryAgain
+            changeIndex={setIndex}
+            resetScore={setScore}
+            setListItemData={setListItemData}
+          />
         </div>
       </div>
     );
@@ -35,7 +41,7 @@ const FinalCard = () => {
         <a target="_blank" rel="noreferrer" href="https://o-prirode.ru/pticy/">Ты можешь улучшить свои знания здесь</a>
       </div>
       <div className="final__card__wrapper">
-        <TryAgain changeIndex={setIndex} resetScore={setScore} />
+        <TryAgain changeIndex={setIndex} resetScore={setScore} setListItemData={setListItemData} />
       </div>
     </div>
   );
