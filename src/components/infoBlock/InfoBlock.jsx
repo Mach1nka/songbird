@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Player from '../player/Player';
 
-const InfoBlock = ({ data }) => {
-  if (Object.keys(data).length === 0) {
+const InfoBlock = ({ listItemData }) => {
+  if (Object.keys(listItemData).length === 0) {
     return (
       <div className="birds-info__container">
         <p className="birds-info__default">Послушайте плеер.</p>
@@ -14,20 +14,20 @@ const InfoBlock = ({ data }) => {
   return (
     <div className="birds-info__container">
       <div className="birds-info">
-        <img src={data.imgSrc} alt="Bird" className="birds__img" />
+        <img src={listItemData.imgSrc} alt="Bird" className="birds__img" />
         <div className="birds-info__titles">
-          <h4 className="titles__name">{data.bird}</h4>
-          <h4 className="titles__lat-name">{data.latName}</h4>
-          <Player src={data.audioSrc} />
+          <h4 className="titles__name">{listItemData.bird}</h4>
+          <h4 className="titles__lat-name">{listItemData.latName}</h4>
+          <Player src={listItemData.audioSrc} />
         </div>
       </div>
-      <p className="birds-description">{data.description}</p>
+      <p className="birds-description">{listItemData.description}</p>
     </div>
   );
 };
 
 InfoBlock.propTypes = {
-  data: PropTypes.shape({
+  listItemData: PropTypes.shape({
     bird: PropTypes.string,
     imgSrc: PropTypes.string,
     audioSrc: PropTypes.string,
@@ -37,7 +37,7 @@ InfoBlock.propTypes = {
 };
 
 InfoBlock.defaultProps = {
-  data: PropTypes.shape({
+  listItemData: PropTypes.shape({
     bird: '',
     imgSrc: '',
     audioSrc: '',

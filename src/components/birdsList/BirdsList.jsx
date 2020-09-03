@@ -1,11 +1,10 @@
 import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
 import BirdsListItem from './birdsListItem/BirdsListItem';
 import BIRDS_DATA from '../../variables/Data';
 import AplicationContext from '../context/AplicationContext';
 
-const BirdsList = ({ data }) => {
-  const { indexOfBirdsData } = useContext(AplicationContext);
+const BirdsList = () => {
+  const { indexOfBirdsData, setListItemData } = useContext(AplicationContext);
   return (
     <div className="birds-list">
       {
@@ -17,16 +16,12 @@ const BirdsList = ({ data }) => {
             description={el.description}
             imgSrc={el.image}
             audioSrc={el.audio}
-            setData={data}
+            setData={setListItemData}
           />
         ))
       }
     </div>
   );
-};
-
-BirdsList.propTypes = {
-  data: PropTypes.func.isRequired,
 };
 
 export default BirdsList;

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import Riddle from '../riddle/Riddle';
 import BirdsList from '../birdsList/BirdsList';
 import InfoBlock from '../infoBlock/InfoBlock';
@@ -7,15 +7,14 @@ import FinalCard from '../finalCard/FinalCard';
 import AplicationContext from '../context/AplicationContext';
 
 const Main = () => {
-  const { indexOfBirdsData } = useContext(AplicationContext);
-  const [listItemData, setListItemData] = useState({});
+  const { indexOfBirdsData, listItemData } = useContext(AplicationContext);
   if (indexOfBirdsData <= 5) {
     return (
       <main>
-        <Riddle listItemData={listItemData} />
+        <Riddle />
         <div className="main__container">
-          <BirdsList data={setListItemData} />
-          <InfoBlock data={listItemData} />
+          <BirdsList />
+          <InfoBlock listItemData={listItemData} />
         </div>
         <NextLevel />
       </main>
