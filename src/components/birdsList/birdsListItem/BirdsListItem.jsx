@@ -3,13 +3,12 @@ import PropTypes from 'prop-types';
 import AplicationContext from '../../context/AplicationContext';
 
 const BirdsListItem = ({
-  bird, latName, description, imgSrc, audioSrc, setData,
+  bird, latName, description, imgSrc, audioSrc,
 }) => {
-  const { isLevelComlete, indexOfBirdsData } = useContext(AplicationContext);
+  const { isLevelComlete, indexOfBirdsData, setListItemData } = useContext(AplicationContext);
   const [stateOfCircle, setStateOfCircle] = useState('');
   useEffect(() => {
-    setStateOfCircle('');
-    setData({});
+    setStateOfCircle();
   }, [indexOfBirdsData]);
   return (
     <button
@@ -17,11 +16,11 @@ const BirdsListItem = ({
       className="list__item"
       onClick={() => {
         if (isLevelComlete) {
-          setData({
+          setListItemData({
             bird, latName, description, imgSrc, audioSrc,
           });
         } else {
-          setData({
+          setListItemData({
             bird, latName, description, imgSrc, audioSrc, setStateOfCircle, stateOfCircle,
           });
         }
@@ -39,7 +38,6 @@ BirdsListItem.propTypes = {
   description: PropTypes.string.isRequired,
   imgSrc: PropTypes.string.isRequired,
   audioSrc: PropTypes.string.isRequired,
-  setData: PropTypes.func.isRequired,
 };
 
 export default BirdsListItem;
