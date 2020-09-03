@@ -16,7 +16,6 @@ const App = () => {
       indexOfBirdsData,
       points,
       setIndex,
-      setScore,
       setPoints,
       isLevelComlete,
       setComplete,
