@@ -4,8 +4,9 @@ import AplicationContext from '../context/AplicationContext';
 import setScore from '../../store/actionCreator/score';
 
 const Score = () => {
-  const { isLevelComlete, points } = useContext(AplicationContext);
+  const { points } = useContext(AplicationContext);
   const currentScore = useSelector((state) => state.updateScore);
+  const isLevelComlete = useSelector((state) => state.updateLevelComplete);
   const dispatch = useDispatch();
   useEffect(() => {
     if (isLevelComlete) {

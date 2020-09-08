@@ -5,17 +5,11 @@ import AplicationContext from '../context/AplicationContext';
 
 const App = () => {
   const [listItemData, setListItemData] = useState({});
-  const [isLevelComlete, setComplete] = useState(false);
   const [points, setPoints] = useState(5);
-  // const [score, setScore] = useState(0);
   return (
     <AplicationContext.Provider value={{
       points,
       setPoints,
-      isLevelComlete,
-      setComplete,
-      // score,
-      // setScore,
       listItemData,
       setListItemData,
     }}

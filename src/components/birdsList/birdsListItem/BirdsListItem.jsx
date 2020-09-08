@@ -1,11 +1,13 @@
 import React, { useState, useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 import AplicationContext from '../../context/AplicationContext';
 
 const BirdsListItem = ({
   bird, latName, description, imgSrc, audioSrc, currentLvl,
 }) => {
-  const { isLevelComlete, setListItemData } = useContext(AplicationContext);
+  const { setListItemData } = useContext(AplicationContext);
+  const isLevelComlete = useSelector((state) => state.updateLevelComplete);
   const [stateOfCircle, setStateOfCircle] = useState('');
   useEffect(() => {
     setStateOfCircle();
