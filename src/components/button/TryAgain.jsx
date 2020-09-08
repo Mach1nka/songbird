@@ -1,10 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
-import AplicationContext from '../context/AplicationContext';
 import setIndexOfBirdsData from '../../store/actionCreator/indexOfBirdsData';
+import setScore from '../../store/actionCreator/score';
 
 const TryAgain = () => {
-  const { setScore } = useContext(AplicationContext); // setListItemData,
   const dispatch = useDispatch();
   return (
     <div>
@@ -13,7 +12,7 @@ const TryAgain = () => {
         className="final__card__button"
         onClick={() => {
           dispatch(setIndexOfBirdsData(0));
-          setScore(0);
+          dispatch(setScore(0));
         }}
       >
         Попробовать еще раз

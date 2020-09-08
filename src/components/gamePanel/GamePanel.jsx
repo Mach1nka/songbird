@@ -4,7 +4,7 @@ import GameLevel from './gameLevel/GameLevel';
 import GAME_LEVELS from '../../variables/GameLevels';
 
 const GamePanel = () => {
-  const currentLvl = useSelector((state) => state.setIndex);
+  const currentLvl = useSelector((state) => state.updateIndex);
   return (
     <ul className="header__game_panel">
       {

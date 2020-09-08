@@ -1,17 +1,17 @@
-import React, { useContext } from 'react';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import TryAgain from '../button/TryAgain';
-import AplicationContext from '../context/AplicationContext';
 
 const FinalCard = () => {
-  const { score } = useContext(AplicationContext);
-  if (score < 30) {
+  const currentScore = useSelector((state) => state.updateScore);
+  if (currentScore < 30) {
     return (
       <div className="final__card">
         <h3 className="final__card__title">Поздравяем!</h3>
         <p className="final__card__text">
           Вы прошли викторину и набрали
           {' '}
-          <span>{score}</span>
+          <span>{currentScore}</span>
           {' '}
           из
           {' '}

@@ -9,7 +9,7 @@ import AplicationContext from '../context/AplicationContext';
 
 const Main = () => {
   const { listItemData } = useContext(AplicationContext);
-  const currentLvl = useSelector((state) => state.setIndex);
+  const currentLvl = useSelector((state) => state.updateIndex);
   if (currentLvl <= 5) {
     return (
       <main>

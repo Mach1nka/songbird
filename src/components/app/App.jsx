@@ -7,16 +7,15 @@ const App = () => {
   const [listItemData, setListItemData] = useState({});
   const [isLevelComlete, setComplete] = useState(false);
   const [points, setPoints] = useState(5);
-  // можно убрать из context и app
-  const [score, setScore] = useState(0);
+  // const [score, setScore] = useState(0);
   return (
     <AplicationContext.Provider value={{
       points,
       setPoints,
       isLevelComlete,
       setComplete,
-      score,
-      setScore,
+      // score,
+      // setScore,
       listItemData,
       setListItemData,
     }}

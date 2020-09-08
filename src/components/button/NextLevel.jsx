@@ -10,20 +10,22 @@ const NextLevel = ({ currentLvl }) => {
   } = useContext(AplicationContext);
   const dispatch = useDispatch();
   return (
-    <button
-      type="button"
-      className={`button__next-level ${isLevelComlete && 'correct'}`}
-      onClick={() => (isLevelComlete
-        ? (
-          dispatch(setIndexOfBirdsData(currentLvl + 1)),
-          setListItemData({}),
-          setComplete(false),
-          setPoints(5))
-        : false
-      )}
-    >
-      Next Level
-    </button>
+    <div>
+      <button
+        type="button"
+        className={`button__next-level ${isLevelComlete && 'correct'}`}
+        onClick={() => (isLevelComlete
+          ? (
+            dispatch(setIndexOfBirdsData(currentLvl + 1)),
+            setListItemData({}),
+            setComplete(false),
+            setPoints(5))
+          : false
+        )}
+      >
+        Next Level
+      </button>
+    </div>
   );
 };
 

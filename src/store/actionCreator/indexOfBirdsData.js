@@ -1,4 +1,4 @@
-import INDEX_OF_BIRDS_DATA from '../actions/ACTIONS';
+import { INDEX_OF_BIRDS_DATA } from '../actions/ACTIONS';
 
 function setIndexOfBirdsData(value) {
   return {

@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
-import setIndex from './indexReducer';
+import updateIndex from './indexReducer';
+import updateScore from './scoreReducer';
 
-const rootReducer = combineReducers({ setIndex });
+const rootReducer = combineReducers({ updateIndex, updateScore });
 
 export default rootReducer;
