@@ -5,11 +5,8 @@ import AplicationContext from '../context/AplicationContext';
 
 const App = () => {
   const [listItemData, setListItemData] = useState({});
-  const [points, setPoints] = useState(5);
   return (
     <AplicationContext.Provider value={{
-      points,
-      setPoints,
       listItemData,
       setListItemData,
     }}

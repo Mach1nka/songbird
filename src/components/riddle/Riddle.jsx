@@ -2,20 +2,20 @@ import React, {
   useState, useContext, useMemo, useEffect,
 } from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Player from '../player/Player';
 import BIRDS_DATA from '../../variables/Data';
 import AplicationContext from '../context/AplicationContext';
 import setRandomValue from '../../variables/randomValue';
 import setLevelComplete from '../../store/actionCreator/isLevelComplete';
+import updatePoints from '../../store/actionCreator/points';
 import audioSignal from '../../variables/audioSignal';
 import success from '../../assets/audio/success.mp3';
 import error from '../../assets/audio/error.mp3';
 
 const Riddle = ({ currentLvl }) => {
-  const {
-    setPoints, listItemData,
-  } = useContext(AplicationContext);
+  const { listItemData } = useContext(AplicationContext);
+  const points = useSelector((state) => state.updatePoints);
   const dispatch = useDispatch();
   const currentData = BIRDS_DATA[currentLvl];
   const randomIdxForRiddle = useMemo(() => setRandomValue(currentData.length), [currentLvl]);
@@ -30,7 +30,7 @@ const Riddle = ({ currentLvl }) => {
       listItemData.setStateOfCircle('correct');
       audioSignal(success);
     } else if ((listItemData.setStateOfCircle) && (!listItemData.stateOfCircle)) {
-      setPoints((prev) => prev - 1);
+      dispatch(updatePoints(points - 1));
       listItemData.setStateOfCircle('incorrect');
       audioSignal(error);
     }

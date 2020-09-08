@@ -4,11 +4,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import AplicationContext from '../context/AplicationContext';
 import setIndexOfBirdsData from '../../store/actionCreator/indexOfBirdsData';
 import setLevelComplete from '../../store/actionCreator/isLevelComplete';
+import updatePoints from '../../store/actionCreator/points';
 
 const NextLevel = ({ currentLvl }) => {
-  const {
-    setPoints, setListItemData,
-  } = useContext(AplicationContext);
+  const { setListItemData } = useContext(AplicationContext);
   const isLevelComlete = useSelector((state) => state.updateLevelComplete);
   const dispatch = useDispatch();
   return (
@@ -21,7 +20,7 @@ const NextLevel = ({ currentLvl }) => {
             dispatch(setIndexOfBirdsData(currentLvl + 1)),
             setListItemData({}),
             dispatch(setLevelComplete(false)),
-            setPoints(5))
+            dispatch(updatePoints(5)))
           : false
         )}
       >
