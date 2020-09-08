@@ -1,10 +1,18 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useContext, useEffect } from 'react';
+import AplicationContext from '../context/AplicationContext';
 
-const Score = ({ score }) => <div className="score">{`Score: ${score}`}</div>;
-
-Score.propTypes = {
-  score: PropTypes.number.isRequired,
+const Score = () => {
+  const {
+    isLevelComlete, points, score, setScore,
+  } = useContext(AplicationContext);
+  useEffect(() => {
+    if (isLevelComlete) {
+      setScore((prev) => prev + points);
+    }
+  }, [isLevelComlete]);
+  return (
+    <div className="score">{`Score: ${score}`}</div>
+  );
 };
 
 export default Score;

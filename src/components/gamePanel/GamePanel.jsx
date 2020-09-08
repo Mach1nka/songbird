@@ -1,14 +1,14 @@
-import React, { useContext } from 'react';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import GameLevel from './gameLevel/GameLevel';
 import GAME_LEVELS from '../../variables/GameLevels';
-import AplicationContext from '../context/AplicationContext';
 
 const GamePanel = () => {
-  const { indexOfBirdsData } = useContext(AplicationContext);
+  const currentLvl = useSelector((state) => state.setIndex);
   return (
     <ul className="header__game_panel">
       {
-        GAME_LEVELS.map((el, idx) => <GameLevel key={`${el.id}_${el.title}`} name={el.title} currentLvl={indexOfBirdsData} elemIdx={idx} />)
+        GAME_LEVELS.map((el, idx) => <GameLevel key={`${el.id}_${el.title}`} name={el.title} currentLvl={currentLvl} elemIdx={idx} />)
       }
     </ul>
   );

@@ -1,0 +1,3 @@
+const INDEX_OF_BIRDS_DATA = 'INDEX_OF_BIRDS_DATA';
+
+export default INDEX_OF_BIRDS_DATA;

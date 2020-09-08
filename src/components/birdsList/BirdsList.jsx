@@ -1,14 +1,15 @@
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import BirdsListItem from './birdsListItem/BirdsListItem';
 import BIRDS_DATA from '../../variables/Data';
 import AplicationContext from '../context/AplicationContext';
 
-const BirdsList = () => {
-  const { indexOfBirdsData, setListItemData } = useContext(AplicationContext);
+const BirdsList = ({ currentLvl }) => {
+  const { setListItemData } = useContext(AplicationContext);
   return (
     <div className="birds-list">
       {
-        BIRDS_DATA[indexOfBirdsData].map((el) => (
+        BIRDS_DATA[currentLvl].map((el) => (
           <BirdsListItem
             key={el.id}
             bird={el.name}
@@ -17,11 +18,16 @@ const BirdsList = () => {
             imgSrc={el.image}
             audioSrc={el.audio}
             setData={setListItemData}
+            currentLvl={currentLvl}
           />
         ))
       }
     </div>
   );
+};
+
+BirdsList.propTypes = {
+  currentLvl: PropTypes.number.isRequired,
 };
 
 export default BirdsList;

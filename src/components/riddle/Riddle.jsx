@@ -1,19 +1,21 @@
 import React, {
   useState, useContext, useMemo, useEffect,
 } from 'react';
+import PropTypes from 'prop-types';
 import Player from '../player/Player';
 import BIRDS_DATA from '../../variables/Data';
 import AplicationContext from '../context/AplicationContext';
+import setRandomValue from '../../variables/randomValue';
 import audioSignal from '../../variables/audioSignal';
 import success from '../../assets/audio/success.mp3';
 import error from '../../assets/audio/error.mp3';
 
-const Riddle = () => {
+const Riddle = ({ currentLvl }) => {
   const {
-    indexOfBirdsData, randomValue, setComplete, setPoints, listItemData,
+    setComplete, setPoints, listItemData,
   } = useContext(AplicationContext);
-  const currentData = BIRDS_DATA[indexOfBirdsData];
-  const randomIdxForRiddle = useMemo(() => randomValue(currentData.length), [indexOfBirdsData]);
+  const currentData = BIRDS_DATA[currentLvl];
+  const randomIdxForRiddle = useMemo(() => setRandomValue(currentData.length), [currentLvl]);
   const [name, setName] = useState();
   const [img, setImg] = useState();
   useEffect(() => {
@@ -34,7 +36,7 @@ const Riddle = () => {
     setName('*****');
     setImg('./assets/images/defaultBird.jpg');
     console.log(`Правильный ответ: ${currentData[randomIdxForRiddle].name}`);
-  }, [indexOfBirdsData]);
+  }, [currentLvl]);
   return (
     <div className="riddle">
       <div className="riddle__image">
@@ -46,6 +48,10 @@ const Riddle = () => {
       </div>
     </div>
   );
+};
+
+Riddle.propTypes = {
+  currentLvl: PropTypes.number.isRequired,
 };
 
 export default Riddle;

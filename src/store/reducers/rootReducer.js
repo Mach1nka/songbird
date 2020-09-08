@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import indexOfBirdsData from './reduser_1';
+import setIndex from './indexReducer';
 
-const rootReducer = combineReducers({ indexOfBirdsData });
+const rootReducer = combineReducers({ setIndex });
 
 export default rootReducer;

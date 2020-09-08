@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import AplicationContext from '../../context/AplicationContext';
 
 const BirdsListItem = ({
-  bird, latName, description, imgSrc, audioSrc,
+  bird, latName, description, imgSrc, audioSrc, currentLvl,
 }) => {
-  const { isLevelComlete, indexOfBirdsData, setListItemData } = useContext(AplicationContext);
+  const { isLevelComlete, setListItemData } = useContext(AplicationContext);
   const [stateOfCircle, setStateOfCircle] = useState('');
   useEffect(() => {
     setStateOfCircle();
-  }, [indexOfBirdsData]);
+  }, [currentLvl]);
   return (
     <button
       type="button"
@@ -38,6 +38,7 @@ BirdsListItem.propTypes = {
   description: PropTypes.string.isRequired,
   imgSrc: PropTypes.string.isRequired,
   audioSrc: PropTypes.string.isRequired,
+  currentLvl: PropTypes.number.isRequired,
 };
 
 export default BirdsListItem;
