@@ -1,14 +1,12 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import Riddle from '../riddle/Riddle';
 import BirdsList from '../birdsList/BirdsList';
 import InfoBlock from '../infoBlock/InfoBlock';
 import NextLevel from '../button/NextLevel';
 import FinalCard from '../finalCard/FinalCard';
-import AplicationContext from '../context/AplicationContext';
 
 const Main = () => {
-  const { listItemData } = useContext(AplicationContext);
   const currentLvl = useSelector((state) => state.updateIndex);
   if (currentLvl <= 5) {
     return (
@@ -16,7 +14,7 @@ const Main = () => {
         <Riddle currentLvl={currentLvl} />
         <div className="main__container">
           <BirdsList currentLvl={currentLvl} />
-          <InfoBlock listItemData={listItemData} />
+          <InfoBlock />
         </div>
         <NextLevel currentLvl={currentLvl} />
       </main>

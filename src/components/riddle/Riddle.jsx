@@ -1,11 +1,10 @@
 import React, {
-  useState, useContext, useMemo, useEffect,
+  useState, useMemo, useEffect,
 } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import Player from '../player/Player';
 import BIRDS_DATA from '../../variables/Data';
-import AplicationContext from '../context/AplicationContext';
 import setRandomValue from '../../variables/randomValue';
 import setLevelComplete from '../../store/actionCreator/isLevelComplete';
 import updatePoints from '../../store/actionCreator/points';
@@ -14,7 +13,7 @@ import success from '../../assets/audio/success.mp3';
 import error from '../../assets/audio/error.mp3';
 
 const Riddle = ({ currentLvl }) => {
-  const { listItemData } = useContext(AplicationContext);
+  const listItemData = useSelector((state) => state.updateListItemData);
   const points = useSelector((state) => state.updatePoints);
   const dispatch = useDispatch();
   const currentData = BIRDS_DATA[currentLvl];

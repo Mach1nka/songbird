@@ -1,13 +1,12 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import AplicationContext from '../context/AplicationContext';
 import setIndexOfBirdsData from '../../store/actionCreator/indexOfBirdsData';
 import setLevelComplete from '../../store/actionCreator/isLevelComplete';
-import updatePoints from '../../store/actionCreator/points';
+import setPoints from '../../store/actionCreator/points';
+import setListItemData from '../../store/actionCreator/listItemData';
 
 const NextLevel = ({ currentLvl }) => {
-  const { setListItemData } = useContext(AplicationContext);
   const isLevelComlete = useSelector((state) => state.updateLevelComplete);
   const dispatch = useDispatch();
   return (
@@ -18,9 +17,9 @@ const NextLevel = ({ currentLvl }) => {
         onClick={() => (isLevelComlete
           ? (
             dispatch(setIndexOfBirdsData(currentLvl + 1)),
-            setListItemData({}),
+            dispatch(setListItemData({})),
             dispatch(setLevelComplete(false)),
-            dispatch(updatePoints(5)))
+            dispatch(setPoints(5)))
           : false
         )}
       >

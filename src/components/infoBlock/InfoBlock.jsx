@@ -1,8 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 import Player from '../player/Player';
 
-const InfoBlock = ({ listItemData }) => {
+const InfoBlock = () => {
+  const listItemData = useSelector((state) => state.updateListItemData);
   if (Object.keys(listItemData).length === 0) {
     return (
       <div className="birds-info__container">
@@ -24,26 +25,6 @@ const InfoBlock = ({ listItemData }) => {
       <p className="birds-description">{listItemData.description}</p>
     </div>
   );
-};
-
-InfoBlock.propTypes = {
-  listItemData: PropTypes.shape({
-    bird: PropTypes.string,
-    imgSrc: PropTypes.string,
-    audioSrc: PropTypes.string,
-    latName: PropTypes.string,
-    description: PropTypes.string,
-  }),
-};
-
-InfoBlock.defaultProps = {
-  listItemData: PropTypes.shape({
-    bird: '',
-    imgSrc: '',
-    audioSrc: '',
-    latName: '',
-    description: '',
-  }),
 };
 
 export default InfoBlock;

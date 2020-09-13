@@ -1,13 +1,13 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
-import AplicationContext from '../../context/AplicationContext';
+import { useSelector, useDispatch } from 'react-redux';
+import setListItemData from '../../../store/actionCreator/listItemData';
 
 const BirdsListItem = ({
   bird, latName, description, imgSrc, audioSrc, currentLvl,
 }) => {
-  const { setListItemData } = useContext(AplicationContext);
   const isLevelComlete = useSelector((state) => state.updateLevelComplete);
+  const dispatch = useDispatch();
   const [stateOfCircle, setStateOfCircle] = useState('');
   useEffect(() => {
     setStateOfCircle();
@@ -18,13 +18,13 @@ const BirdsListItem = ({
       className="list__item"
       onClick={() => {
         if (isLevelComlete) {
-          setListItemData({
+          dispatch(setListItemData({
             bird, latName, description, imgSrc, audioSrc,
-          });
+          }));
         } else {
-          setListItemData({
+          dispatch(setListItemData({
             bird, latName, description, imgSrc, audioSrc, setStateOfCircle, stateOfCircle,
-          });
+          }));
         }
       }}
     >

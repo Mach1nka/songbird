@@ -1,20 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Header from '../header/Header';
 import Main from '../main/Main';
-import AplicationContext from '../context/AplicationContext';
 
-const App = () => {
-  const [listItemData, setListItemData] = useState({});
-  return (
-    <AplicationContext.Provider value={{
-      listItemData,
-      setListItemData,
-    }}
-    >
-      <Header />
-      <Main />
-    </AplicationContext.Provider>
-  );
-};
+const App = () => (
+  <>
+    <Header />
+    <Main />
+  </>
+);
 
 export default App;
