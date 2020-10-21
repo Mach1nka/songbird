@@ -1,7 +1,6 @@
 import { LIST_ITEM_DATA } from '../actions/ACTIONS';
 
 function updateListItemData(state = {}, action) {
-  console.log(action.payload);
   switch (action.type) {
     case LIST_ITEM_DATA: return {
       ...state,

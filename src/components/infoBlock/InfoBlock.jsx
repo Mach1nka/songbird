@@ -4,7 +4,12 @@ import Player from '../player/Player';
 
 const InfoBlock = () => {
   const listItemData = useSelector((state) => state.updateListItemData);
-  if (Object.keys(listItemData).length === 0) {
+  const checkObjectValues = (obj) => {
+    const arrOfValues = Object.values(obj);
+    const sortedArr = arrOfValues.filter((el) => el !== undefined);
+    return sortedArr;
+  };
+  if (checkObjectValues(listItemData).length === 0) {
     return (
       <div className="birds-info__container">
         <p className="birds-info__default">Послушайте плеер.</p>
